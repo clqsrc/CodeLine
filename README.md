@@ -20,6 +20,10 @@
 
 其中 8800 是您在项目 .vscode/settings.json 中的配置项，例如 "CodeLine.http_port":"8800"。
 
+更详细的开发说明请看《_开发说明.txt》，也可以看我们目前的站点
+
+http://newbt.net/ms/vdisk/show_bbs.php?id=7F883637E03B987ED59C12C12FD2D6D0&pid=164
+
 ## 配置
 
 您可以在设置中配置扩展的选项。
