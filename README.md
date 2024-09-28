@@ -16,7 +16,7 @@
 
 您可以通过发送 http 的 get 请求来让 vscode 跳转到指定的代码位置。
 
-例如 htttp://127.0.0.1:8800/go?file_name=fn&line_no=100
+例如 http://127.0.0.1:8800/go?file_name=fn&line_no=100
 
 其中 8800 是您在项目 .vscode/settings.json 中的配置项，例如 "CodeLine.http_port":"8800"。
 
