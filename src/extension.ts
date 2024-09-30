@@ -70,7 +70,7 @@ function getWebviewContent() {
     <html lang="en">
     <body>
 		CodeLine 是一个代码跳转插件，您可以通过发送 http 的 get 请求来让 vscode 跳转到指定的代码位置。<br>
-		例如 htttp://127.0.0.1:8800/go?file_name=fn&line_no=100 <br>
+		例如 http://127.0.0.1:8800/go?file_name=fn&line_no=100 <br>
 		其中 8800 是您在项目 .vscode/settings.json 中的配置项，例如 "CodeLine.http_port":"8800"
 	    <!--
         <button onclick="vscode.postMessage({command: 'alert', text: '按钮被点击了！'})">
@@ -199,6 +199,16 @@ function readSettings() {
 
 // 另外在 yo code 中选择的是 ts 项目，所以要先编译，命令为:
 //  npm run compile
+
+//--------------------------------------------------------
+// 使用较旧版本的 VS Code 扩展 API： 如果您需要保持对较旧 VS Code 版本的兼容性，您应该降级 @types/vscode 的版本。在 package.json 文件中更新 devDependencies：
+// "devDependencies": {
+//   "@types/vscode": "^1.60.0"
+// }
+//上面的也要和它保持一致为好，要不还是会提示不兼容
+// "engines": {
+//     "vscode": "^1.60.0"
+//   },
 
 //--------------------------------------------------------
 //https://marketplace.visualstudio.com/vscode  中似乎可以直接发布，并不需要你说的账号
