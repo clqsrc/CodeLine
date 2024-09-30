@@ -1,0 +1,66 @@
+{
+  "name": "codeline",
+  "displayName": "CodeLine",
+  "description": "go to code for line",
+  "version": "0.0.4",
+  "publisher": "CodeLine",
+  "id": "CodeLine.CodeLine",
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/clqsrc/CodeLine.git"
+	},
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+	"*",
+	 "onCommand:codeline.helloWorld",
+	 "onCommand:codeline.showWebview"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeline.helloWorld",
+        "title": "CodeLine Hello World"
+      },
+	  {
+		"command": "codeline.showWebview",
+		"title": "CodeLine 显示 WebView"
+		}
+    ],
+	"configuration": {
+		"type": "object",
+		"title": "CodeLine Settings",
+		"properties": {
+			"CodeLine.http_port": {
+				"type": "string",
+				"default": "8800",
+				"description": "CodeLine 的 http 监听端口."
+			}
+		}
+	}
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+	"@types/vscode": "^1.60.0",
+    "@types/mocha": "^10.0.7",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "eslint": "^9.9.1",
+    "typescript": "^5.5.4",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
