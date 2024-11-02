@@ -1,0 +1,55 @@
+
+_正式的vscode插件，也是开发的第二个vscode插件
+
+
+第一个是以前的那个跳转。因为现在官方支持了就没再用了。
+
+
+第一版本的功能是能跳转到任意文件的任意行上。
+接受 socket 请求，这样就能调用其他程序。
+
+--------------------------------------------------------
+
+安装 Node.js 和 npm
+安装 Yeoman 和 VSCode 扩展生成器：
+
+npm install -g yo generator-code
+
+创建插件项目：
+运行以下命令：	
+
+yo code
+
+yo code 后的结果如下
+--------------------------------------------------------
+Your extension codeline has been created!
+
+To start editing with Visual Studio Code, use the following commands:
+
+     code codeline
+
+Open vsc-extension-quickstart.md inside the new extension for further instructions
+on how to modify, test and publish your extension.
+
+For more information, also visit http://code.visualstudio.com and follow us @code.
+
+--------------------------------------------------------
+对于您提到的功能，可以考虑以下实现方式：
+跳转到任意文件的任意行：
+使用 VSCode API 中的 vscode.workspace.openTextDocument() 和 vscode.window.showTextDocument() 方法打开文件
+使用 editor.revealRange() 方法跳转到指定行
+接受 socket 请求：
+使用 Node.js 的 net 模块创建 socket 服务器
+在接收到请求时，调用相应的 VSCode API 执行操作
+如果您需要更详细的代码示例或有其他具体问题，请随时告诉我。
+
+
+--------------------------------------------------------
+插件不能直接在这个项目中运行，要在 codeline 中，并且只能用 vscode 打开。现在还不能在 Cursor 中运行。
+
+另外在 yo code 中选择的是 ts 项目，所以要先编译，命令为:
+ npm run compile
+
+
+--------------------------------------------------------
+插件可能没有激活，要查看 package.json 中的 activationEvents 是否包含 * （或者其他），如果没有，则要手动添加。
